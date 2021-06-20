@@ -12,7 +12,7 @@ export const Shop = () => {
 		fetch(API_URL, { headers: { Authorization: API_KEY } })
 			.then(res => res.json())
 			.then(data => {
-				data.shop && setGoods(data.shop);
+				data.featured && setGoods(data.featured);
 				setLoading(false);
 			})
 			.catch(console.log);

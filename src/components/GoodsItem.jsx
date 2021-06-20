@@ -1,17 +1,17 @@
-export const GoodsItem = ({ displayName, price, displayAssets, displayDescription }) => {
+export const GoodsItem = ({ id, name, description, price, full_background }) => {
 	return (
 		<div className='card'>
 			<div className='card-image'>
-				<img src={displayAssets[0].full_background} alt={displayName} />
+				<img src={full_background} alt={name} />
 			</div>
 			<div className='card-content'>
-				<span className='card-title'>{displayName}</span>
-				<p>{displayDescription}</p>
+				<span className='card-title'>{name}</span>
+				<p>{description}</p>
 			</div>
 			<div className='card-action'>
 				<button className='btn'>Купить</button>
 				<span style={{ fontSize: '1.8rem' }} className='right'>
-					{price.finalPrice} руб.
+					{price} руб.
 				</span>
 			</div>
 		</div>
