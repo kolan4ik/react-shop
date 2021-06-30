@@ -1,14 +1,14 @@
-import { GoodsItem } from './GoodsItem';
+import { GoodsItem } from "./GoodsItem";
 
-export const GoodsList = ({ goods = [] }) => {
-	if (!goods.length) {
-		return <h3>Nothing here</h3>;
-	}
-	return (
-		<>
-			{goods.map(item => (
-				<GoodsItem key={item.id} {...item} />
-			))}
-		</>
-	);
+export const GoodsList = ({ goods = [], addToBasket }) => {
+  if (!goods.length) {
+    return <h3>Nothing here</h3>;
+  }
+  return (
+    <>
+      {goods.map(item => (
+        <GoodsItem addToBasket={addToBasket} key={item.id} {...item} />
+      ))}
+    </>
+  );
 };
