@@ -1,8 +1,11 @@
-import React from 'react';
+import { useContext } from 'react';
+import { ShopContent } from '../context';
 
 export const BasketItem = ({ name, id, price, counter, removeFromBasket = Function.prototype, incrementGoods = Function.prototype, decrementGoods = Function.prototype }) => {
+  const { example } = useContext(ShopContent);
+  console.log(example);
   return (
-    <div class='collection-item'>
+    <div className='collection-item'>
       {name} x{' '}
       <span className='calc'>
         <i onClick={() => incrementGoods(id)} className='material-icons'>
@@ -15,7 +18,7 @@ export const BasketItem = ({ name, id, price, counter, removeFromBasket = Functi
       </span>
       = {price * counter} рублей
       <span className='secondary-content'>
-        <i onClick={() => removeFromBasket(id)} class='material-icons basket-remove'>
+        <i onClick={() => removeFromBasket(id)} className='material-icons basket-remove'>
           close
         </i>
       </span>
