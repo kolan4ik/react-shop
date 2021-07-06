@@ -1,7 +1,9 @@
-import { useState } from 'react';
-
-export const GoodsItem = ({ id, name, description, price, full_background, addToBasket }) => {
+import { useState, useContext } from 'react';
+import { ShopContent } from '../context';
+export const GoodsItem = ({ id, name, description, price, full_background }) => {
   const [isBasket, setIsBasket] = useState(false);
+
+  const { addToBasket } = useContext(ShopContent);
 
   const addToBasketHandler = (id, name, description, price, full_background) => {
     addToBasket(id, name, description, price, full_background);
